@@ -16,13 +16,15 @@ class CollectParticipants(WaitPage):
 
 class Demographics(Page):
     form_model = models.Player
-    form_fields = ['age', 'field_of_study', 'likes_experiment', 'weight', 'height', 'female', 'calculate_bmi']
-    def before_next_page(self):
-        self.bmi = self.calculate_bmi
+    form_fields = ['age', 'field_of_study', 'likes_experiment', 'weight', 'height', 'female']
 
 class Bmi(Page):
-    form_model = models.Player
-    form_field = ['bmi']
+    def vars_for_template(self):
+        self.player.calculate_bmi()
+
+        return{
+            "bmi": self.player.bmi
+        }
 
 
 page_sequence = [
