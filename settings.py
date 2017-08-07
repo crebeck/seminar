@@ -56,7 +56,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = True
 
 
@@ -118,6 +118,14 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': ...,
     #     'app_sequence': ['...'],
     # }
+
+     {
+         'name': 'survey',
+         'display_name': 'A survey of demographics',
+         'num_demo_participants':1,
+         'app_sequence': ['survey'],
+         'participation_fee': 3.00,
+     }
 ]
 
 # anything you put after the below line will override

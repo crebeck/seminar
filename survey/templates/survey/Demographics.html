@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Demographic Survey
+{% endblock %}
+
+{% block content %}
+    <p>
+    Please fill in the following survey:
+    </p>
+
+    {% formfield player.age %}
+
+    {% formfield player.field_of_study %}
+
+    {% formfield player.likes_experiment %}
+
+    {% formfield player.female %}
+
+    {% formfield player.height %}
+
+    {% formfield player.weight %}
+
+    <p>
+    {% next_button %}
+    </p>
+
+{% endblock %}
+
+

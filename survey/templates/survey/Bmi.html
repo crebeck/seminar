@@ -2,10 +2,12 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Page title
+    Your body mass index (bmi):
 {% endblock %}
 
 {% block content %}
+
+    {% formfield player.bmi %}
 
     {% next_button %}
 {% endblock %}

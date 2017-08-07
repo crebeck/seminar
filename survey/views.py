@@ -4,22 +4,30 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
+class Instructions(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
+class CollectParticipants(WaitPage):
+    wait_for_all_groups = True
 
     def after_all_players_arrive(self):
         pass
 
+class Demographics(Page):
+    form_model = models.Player
+    form_fields = ['age', 'field_of_study', 'likes_experiment', 'weight', 'height', 'female', 'calculate_bmi']
+    def before_next_page(self):
+        self.bmi = self.calculate_bmi
 
-class Results(Page):
-    pass
+class Bmi(Page):
+    form_model = models.Player
+    form_field = ['bmi']
 
 
 page_sequence = [
-    MyPage,
-    ResultsWaitPage,
-    Results
+    Instructions,
+    CollectParticipants,
+    Demographics,
+    Bmi
 ]
