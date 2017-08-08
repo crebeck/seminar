@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Results:
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    Your choice: {{ player.choice }}
+    The coins result: {{ player.coin_result }}
+    </p>
+
+    <br>
+
+    <p>
+        {{ player.win_message }}
+    </p>
+
+    <br>
+
+    <p>
+        Which means, that you won the following amount: {{ player.payoff }}
+    </p>
+
+
+    <br>
+
+    <p>
+        Hence, your final payoff is: {{ player.final_payoff }}
+    </p>
+
+
+    <br>
+
+
+    {% next_button %}
+
+{% endblock %}

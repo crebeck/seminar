@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Set your wager:
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You can now bet on the fair coin. Please, choose either heads or tails.
+    </p>
+        {% formfield player.choice %}
+    <p>
+
+    </p>
+
+    Your endowment is:
+    <p>
+        {{ Constants.endowment }} points
+    </p>
+
+    <br>
+
+    {% formfield player.wager %}
+
+
+
+    <br>
+    <br>
+    {% next_button %}
+{% endblock %}
+
+
