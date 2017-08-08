@@ -134,8 +134,18 @@ SESSION_CONFIGS = [
          'app_sequence': ['fortune'],
          'participation_fee': 3.00,
          'real_world_currency_per_point': 0.1
+    },
+
+    {
+         'name': 'prisoners_dilemma',
+         'display_name': 'A standard prisoners dilemma',
+         'num_demo_participants': 2,
+         'app_sequence': ['prisoners_dilemma'],
+         'participation_fee': 3.00,
+         'real_world_currency_per_point': 0.1
      }
 ]
+
 
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.

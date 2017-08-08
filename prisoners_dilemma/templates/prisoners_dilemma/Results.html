@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Result
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    Your choice: {{ player.choice }}
+    Your partners choice:
+    </p>
+
+    <br>
+
+
+    <br>
+
+    <p>
+        Which means, that you have to stay {{ player.years }} in prison.
+    </p>
+
+
+
+    {% next_button %}
+
+{% endblock %}
