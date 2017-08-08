@@ -54,20 +54,35 @@ class Player(BasePlayer):
     )
 
     height = models.FloatField(
+        initial = 1.0,
         min = 1.0,
         max = 2.5,
-        verbose_name = "What is your height in meters? Use floating numbers for your answer.",#
+        widget = widgets.SliderInput(attrs={'step': '0.1'}),
+        verbose_name = "What is your height in meters?",#
         doc = "height of participant in meters",
     )
 
     weight = models.FloatField(
+        initial = 30,
         min = 30,
         max = 300,
-        verbose_name = "How heavy are you in Kg? You can use floating numbers for your answer.",
+        widget = widgets.SliderInput(attrs={'step': '0.1'}),
+        verbose_name = "How heavy are you in Kg?",
         doc = "weight of participant in kg",
     )
 
     bmi = models.FloatField()
 
+    bmi_eval = models.CharField()
+
     def calculate_bmi(self):
-        self.bmi = self.weight / self.height ** 2
+        self.bmi = round(self.weight / self.height ** 2, 2)
+
+    def bmi_evaluation(self):
+        if self.bmi < 18.5:
+            self.bmi_eval = "You are underweight. Get help!"
+        elif self.bmi > 25:
+            self.bmi_eval =  "You are overweight, you fat fuck!"
+        else:
+            self.bmi_eval = "Your weight is normal, good job!"
+

@@ -1,13 +1,30 @@
 {% extends "global/Page.html" %}
 {% load staticfiles otree_tags %}
 
+
+
 {% block title %}
+    <font color="#FFFF00">
     Your body mass index (bmi):
 {% endblock %}
 
 {% block content %}
+    <body style="background-color:#0000FF;">
+    <font color="#FFFF00">
 
+    <p>
     {{ player.bmi }}
+    </p>
+
+    <br>
+
+    <p>
+        <b>
+           {{ player.bmi_eval }}
+        </b>
+    </p>
+
+    <br>
 
     {% next_button %}
 {% endblock %}

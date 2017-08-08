@@ -18,13 +18,15 @@ class Demographics(Page):
     form_model = models.Player
     form_fields = ['age', 'field_of_study', 'likes_experiment', 'weight', 'height', 'female']
 
-class Bmi(Page):
-    def vars_for_template(self):
+    def before_next_page(self):
         self.player.calculate_bmi()
+        self.player.bmi_evaluation()
 
-        return{
-            "bmi": self.player.bmi
-        }
+
+
+class Bmi(Page):
+    form_model = models.Player
+
 
 
 page_sequence = [
