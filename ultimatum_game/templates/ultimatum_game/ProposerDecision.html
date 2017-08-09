@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Proposer Decision
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You are the proposer.
+    </p>
+
+    <br>
+
+    <p>
+        {% formfield group.offer %}
+    </p>
+
+
+    {% next_button %}
+{% endblock %}
+
+

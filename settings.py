@@ -143,7 +143,17 @@ SESSION_CONFIGS = [
          'app_sequence': ['prisoners_dilemma'],
          'participation_fee': 3.00,
          'real_world_currency_per_point': 0.1
-     }
+     },
+
+    {
+         'name': 'ultimatum_game',
+         'display_name': 'A standard ultimatum game',
+         'num_demo_participants': 2,
+         'app_sequence': ['ultimatum_game'],
+         'participation_fee': 3.00,
+         'real_world_currency_per_point': 0.1
+
+     },
 ]
 
 

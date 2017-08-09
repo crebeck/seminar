@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+
+
+{% block content %}
+
+    Hello, hello! This is a 08/15 ultimatum game. The proposer has a pot of 100 - one hundred I say! - points, from
+    which he an send the responder a share. If the responder accepts, he receives the offer and the proposer receives
+    the rest of the endowment. If he declines, however, both receive nothing.
+    So if you are the proposer: don't be greedy!
+
+    <br>
+    <br>
+<!--
+Documentation on how to write a django template here:
+https://docs.djangoproject.com/en/1.8/ref/templates/language/
+
+Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
+http://getbootstrap.com/components/
+
+-->
+
+    {% next_button %}
+
+{% endblock %}

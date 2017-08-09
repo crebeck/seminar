@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Responder Decision
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    You are the responder.
+    The proposer send you: {{ group.offer }}
+    </p>
+
+    <br>
+
+    <p>
+        {% formfield group.accept %}
+    </p>
+
+
+    {% next_button %}
+{% endblock %}
+

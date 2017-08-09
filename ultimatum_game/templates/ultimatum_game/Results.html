@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    The proposer send: {{ group.offer }}
+    </p>
+
+    <br>
+
+    <p>
+    The responder chose: {{ results_accept }}
+    </p>
+
+    <br>
+
+
+    <br>
+
+    <p>
+        Which means, you get: {{ player.payoff }}
+    </p>
+
+    <br>
+
+
+    {% next_button %}
+
+{% endblock %}
