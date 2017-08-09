@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    Your investment was {{ investment_success }}.
+    </p>
+
+    <p>
+        Your investment earned you the following payoff:
+    </p>
+
+    <br>
+
+    <p>
+        {{ player.payoff }}
+    </p>
+
+    <br>
+
+    {% next_button %}
+{% endblock %}
+
+

@@ -152,7 +152,15 @@ SESSION_CONFIGS = [
          'app_sequence': ['ultimatum_game'],
          'participation_fee': 3.00,
          'real_world_currency_per_point': 0.1
+     },
 
+    {
+         'name': 'investment',
+         'display_name': 'Investment Task',
+         'num_demo_participants': 1,
+         'app_sequence': ['investment'],
+         'participation_fee': 3.00,
+         'real_world_currency_per_point': 0.1
      },
 ]
 

@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Investment Decision
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You can now decide how much to invest.
+    </p>
+
+    <br>
+
+    <p>
+        {% formfield investment_decision %}
+    </p>
+
+    <br>
+
+    {% next_button %}
+
+{% endblock %}
