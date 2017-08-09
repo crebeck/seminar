@@ -23,21 +23,30 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     def calculate_payoffs(self):
-        players = self.get_players()
-        if players[0].choice == Player[1].choice & Player[0].choice == True: # both cooperate
-            players[0].years = 1
-            players[1].years = 1
-        elif players[0].choice == Player[1].choice & Player[0].choice == False: # both defect
-            players[0].years = 2
-            players[1].years = 2
-        elif Player[0].years != Player[1].choice & Player[0].choice == True:  # only P1 cooperates
-            players[0].years = 3
-            players[1].years = 0
+
+        player1 = self.get_player_by_role('Player 1')
+        player2 = self.get_player_by_role('Player 2')
+
+        if player1.choice == player2.choice and player1.choice == True: # both cooperate
+            player1.years = 1
+            player2.years = 1
+        elif player1.choice == player2.choice and player1.choice == False: # both defect
+            player1.years = 2
+            player2.years = 2
+        elif player1.years != player2.choice and player1.choice == True:  # only P1 cooperates
+            player1.years = 3
+            player2.years = 0
         else: # only P2 cooperates
-            players[0],years = 0
-            players[1].years = 3
+            player1.years = 0
+            player2.years = 3
 
 class Player(BasePlayer):
+    def role(self):
+        if self.id_in_group == 1:
+            return 'Player 1'
+        else:
+            return 'Player 2'
+
     choice = models.BooleanField(
         choices = [(True, "Cooperate"), (False, "Defect")],
         widget = widgets.RadioSelect(),
@@ -47,4 +56,7 @@ class Player(BasePlayer):
 
     years = models.PositiveIntegerField()
 
+    your_partners_choice = models.BooleanField()
 
+    def partner_choice(self):
+        self.your_partners_choice = self.get_others_in_group()[0].choice

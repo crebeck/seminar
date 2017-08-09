@@ -8,7 +8,46 @@
 {% block content %}
 
     <p>
-    {% formfield player.choice %}
+        You now can decide on your strategy.
+    </p>
+
+    <br>
+
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Player 2</th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Cooperate</th>
+            <th>Defect</th>
+        </tr>
+
+        <tr>
+            <th>Player 1</th>
+            <th>Cooperate</th>
+            <td>1,1</td>
+            <td>0,3</td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <th>Defect</th>
+            <td>3,0</td>
+            <td>2,2</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <p>
+        {% formfield player.choice %}
     </p>
 
 

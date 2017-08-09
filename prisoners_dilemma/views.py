@@ -21,7 +21,13 @@ class Choice(Page):
 
 
 class Results(Page):
-    pass
+    def vars_for_template(self):
+        self.player.partner_choice()
+
+        return {'results_choice': "Cooperate" if self.player.choice==True else "Defect",
+                'results_your_partners_choice': "Cooperate" if self.player.your_partners_choice==True else "Defect"
+                }
+
 
 page_sequence = [
     Instructions,
