@@ -11,10 +11,14 @@
         You can now decide how much to invest.
     </p>
 
+    <p>
+        You have an endowment of: {{ player.endowment }}
+    </p>
+
     <br>
 
     <p>
-        {% formfield investment_decision %}
+        {% formfield player.investment_decision %}
     </p>
 
     <br>

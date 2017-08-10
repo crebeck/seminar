@@ -157,11 +157,21 @@ SESSION_CONFIGS = [
     {
          'name': 'investment',
          'display_name': 'Investment Task',
-         'num_demo_participants': 1,
+         'num_demo_participants': 2,
          'app_sequence': ['investment'],
          'participation_fee': 3.00,
-         'real_world_currency_per_point': 0.1
+         'real_world_currency_per_point': 0.1,
+         'treatment': 'high_stakes'
      },
+
+    {
+        'name': 'quiz',
+        'display_name': 'A simple quiz',
+        'num_demo_participants': 2,
+        'app_sequence': ['quiz'],
+        'participation_fee': 3.00,
+        'real_world_currency_per_point': 0.1
+    },
 ]
 
 

@@ -5,17 +5,25 @@ from .models import Constants
 
 
 class Instructions(Page):
-    pass
+    def before_next_page(self):
+        self.player.endowment_assignment()
 
 
 class ResultsWaitPage(WaitPage):
-
     def after_all_players_arrive(self):
-        self.player.calculate_payoff()
+        pass
+
+
 
 class InvestmentDecision(Page):
     form_model = models.Player
     form_fields = ['investment_decision']
+
+    def investment_decision_max(self):
+        return self.player.endowment
+
+    def before_next_page(self):
+        self.player.calculate_payoff()
 
 class Results(Page):
     def vars_for_template(self):
