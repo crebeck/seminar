@@ -14,7 +14,6 @@ class Question(Page):
             qd['choice1'],
             qd['choice2'],
             qd['choice3'],
-            qd['choice4'],
         ]
 
     def before_next_page(self):
