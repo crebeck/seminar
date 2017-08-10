@@ -167,7 +167,7 @@ SESSION_CONFIGS = [
     {
         'name': 'quiz',
         'display_name': 'A simple quiz',
-        'num_demo_participants': 2,
+        'num_demo_participants': 1,
         'app_sequence': ['quiz'],
         'participation_fee': 3.00,
         'real_world_currency_per_point': 0.1
