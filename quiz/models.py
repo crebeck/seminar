@@ -20,7 +20,7 @@ class Constants(BaseConstants):
     with open('quiz/quiz.csv') as quiz_questions:
         questions = list(csv.DictReader(quiz_questions))
 
-    pprint.pprint(questions)
+    # pprint.pprint(questions)
 
     num_rounds = len(questions)
 
