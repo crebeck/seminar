@@ -1,0 +1,7 @@
+id,question,choice1,choice2,choice3,solution
+1,What is our version control software called?,SVN,Git,Python,Git
+2,Which version of Python does oTree require?,v7.2.x,v2.7.x,v3.x,v3.x
+3,Who's the main developer of oTree?,Chris Wickens,Daniel Chen,Martin Schonger,Chris Wickens
+4,The name o-Tree is an homage to?,x-Tree,y-Tree,z-Tree,z-Tree
+5,In Python 'self' refers to...,the current object,the parent object,the child object,the current object
+6,Exams are ...,required,overrated,boring,required
