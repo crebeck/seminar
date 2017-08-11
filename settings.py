@@ -172,6 +172,15 @@ SESSION_CONFIGS = [
         'participation_fee': 3.00,
         'real_world_currency_per_point': 0.1
     },
+
+    {
+        'name': 'chat',
+        'display_name': 'A chat implementation',
+        'num_demo_participants': 1,
+        'app_sequence': ['chat'],
+        'participation_fee': 3.00,
+        'real_world_currency_per_point': 0.1
+    },
 ]
 
 
