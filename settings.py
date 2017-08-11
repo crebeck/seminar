@@ -65,7 +65,7 @@ USE_POINTS = False
 LANGUAGE_CODE = 'en'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ['otree', 'otreechat']
 
 # SENTRY_DSN = ''
 
@@ -176,7 +176,7 @@ SESSION_CONFIGS = [
     {
         'name': 'chat',
         'display_name': 'A chat implementation',
-        'num_demo_participants': 1,
+        'num_demo_participants': 3,
         'app_sequence': ['chat'],
         'participation_fee': 3.00,
         'real_world_currency_per_point': 0.1

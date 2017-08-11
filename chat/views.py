@@ -4,22 +4,17 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class MyPage(Page):
-    pass
+class Instructions(Page):
+    def before_next_page(self):
+        self.player.role_assignment()
 
 
-class ResultsWaitPage(WaitPage):
 
-    def after_all_players_arrive(self):
-        pass
-
-
-class Results(Page):
-    pass
+class Chat(Page):
+    form_model = models.Player
 
 
 page_sequence = [
-    MyPage,
-    ResultsWaitPage,
-    Results
+    Instructions,
+    Chat,
 ]

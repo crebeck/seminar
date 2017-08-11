@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load otreechat %}
+
+{% block title %}
+    Chat
+{% endblock %}
+
+{% block content %}
+
+    {% chat nickname=player.role %}
+
+    <style>
+    .otree-chat .messages {
+        height: 400px;
+    }
+    .otree-chat .nickname {
+        color: #0000FF;
+        font-weight: bold;
+    }
+    </style>
+
+    {% next_button %}
+{% endblock %}
+
+
