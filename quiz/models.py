@@ -29,7 +29,12 @@ class Subsession(BaseSubsession):
         #self.session.vars['questions'] = Constants.questions if self.round_number == 1 else None
 
         if self.round_number == 1:
+            # import random
+            # randomised_questions = random.sample(Constants.questions, 3)
+
             self.session.vars['questions'] = Constants.questions
+
+
 
         for p in self.get_players():
             question_data = p.current_question()
@@ -56,4 +61,5 @@ class Player(BasePlayer):
         return self.session.vars['questions'][self.round_number - 1]
 
     def check_if_correct(self):
-        self.is_correct = self.submitted_answer == self.solution
+        # self.is_correct = self.submitted_answer == self.solution
+        self.is_correct = True if self.submitted_answer == self.solution else False # also works
